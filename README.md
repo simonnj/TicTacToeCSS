@@ -1,2 +1,0 @@
-# TicTacToeCSS
-Created with CodeSandbox

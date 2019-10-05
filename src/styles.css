@@ -1,0 +1,21 @@
+body {
+  font-family: Helvetica;
+  font-size: 20px;
+}
+table {
+  table-layout: fixed;
+  font-family: Helvetica;
+  font-size: 30px;
+}
+table,
+td {
+  table-layout: fixed;
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+/* input[type=text]: {
+} */
