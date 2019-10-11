@@ -1,7 +1,6 @@
 import "./styles.css";
 var sizeOfBoard = 5;
 var header = "Tic Tac Toe " + sizeOfBoard + " x " + sizeOfBoard;
-document.getElementById("board").innerHTML = "<h1>" + header + "</h1>";
 var players = [];
 players[0] = "X";
 players[1] = "O";
@@ -21,9 +20,6 @@ var winningValues = [
   17043521, //right to left diagnoal
   1118480 //left to right diagonal
 ];
-var table = document.getElementById("tictactoeTable");
-var tbody = table.getElementsByTagName("tbody")[0];
-var cells = tbody.getElementsByTagName("td");
 
 var gameOver = false;
 
@@ -36,18 +32,16 @@ var gameOver = false;
   }
   table += "</tr>";
 } */
-document.getElementById("board").innerHTML = "<table>" + table + "</table>";
-
-document.getElementById("tictactoeTable").addEventListener("click", placeMark);
-
-function placeMark(points) {
-  if (gameOver === false)
-    document.getElementsByTagName("td").innerHTML = "" + players[turn];
-  sizeOfBoard++;
-  pointCount(points);
-  winning();
-  changeCellColor();
-  move();
+document.getElementById("board").addEventListener("click", placeMark);
+function placeMark(points, clickedDiv) {
+  if (gameOver === false) {
+    clickedDiv.innerHTML = "" + players[turn];
+    sizeOfBoard++;
+    pointCount(points);
+    winning();
+    changeCellColor();
+    move();
+  }
   if (gameOver === false) {
     switchPlayer();
   }
@@ -72,7 +66,7 @@ function move() {
       clearInterval(id);
     } else {
       width++;
-      elem.style.width = width + '%';
+      elem.style.width = width + "%";
     }
   }
 }
