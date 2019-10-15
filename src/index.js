@@ -32,10 +32,13 @@ var gameOver = false;
   }
   table += "</tr>";
 } */
-document.getElementById("board").addEventListener("click", placeMark);
-function placeMark(points, clickedDiv) {
+// document.getElementById("board").addEventListener("click", placeMark);
+function placeMark(clickedDiv, points) {
+  console.log(clickedDiv);
+  console.log(points);
   if (gameOver === false) {
     clickedDiv.innerHTML = "" + players[turn];
+
     sizeOfBoard++;
     pointCount(points);
     winning();
