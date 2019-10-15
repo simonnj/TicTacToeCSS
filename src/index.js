@@ -39,14 +39,13 @@ function placeMark(points, clickedDiv) {
     sizeOfBoard++;
     pointCount(points);
     winning();
-    changeCellColor();
     move();
   }
   if (gameOver === false) {
     switchPlayer();
   }
 }
-function changeCellColor() {
+/* function changeCellColor() {
   for (var i = 0, length = cells.length; i < length; i++) {
     if ((cells[i].innerHTML = "X")) {
       (cells[i].style.backgroundColor = 124), 252, 0;
@@ -56,7 +55,7 @@ function changeCellColor() {
       cells[i].style.backgroundColor = "white";
     }
   }
-}
+} */
 function move() {
   var elem = document.getElementById("myBar");
   var width = 1;
@@ -100,3 +99,4 @@ function winning() {
     gameOver = true;
   }
 }
+window.placeMark = placeMark;
